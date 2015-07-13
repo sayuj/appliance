@@ -1,0 +1,12 @@
+h1 Target Details
+
+p
+  b Hostname:
+  | #{@target.hostname}
+p
+  b Address:
+  | #{@target.address}
+
+p
+  b Status:
+  | #{@target.reachable_in_word.capitalize}

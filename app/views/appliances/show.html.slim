@@ -1,6 +1,12 @@
 h1 Targets
 
+p Total number of targets: #{@status[:total_targets]}
+p Reachable targets: #{@status[:reachable_targets]}
+p Unreachable targets: #{@status[:total_targets] - @status[:reachable_targets]}
+
 = pie_chart @status
+
+h2 List of targets
 
 table#targets
   tr
@@ -8,5 +14,5 @@ table#targets
     th address
   - for target in @targets
     tr
-      td.hostname = target.hostname
+      td.hostname = link_to target.hostname, appliance_target_path(@appliance, target)
       td.address = target.address
