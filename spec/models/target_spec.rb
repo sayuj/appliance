@@ -15,20 +15,6 @@ describe Target, :type => :model do
     end
   end
 
-  # TODO: Rewrite
-  describe '.update_reachability' do
-    let(:target) { create(:target) }
-
-    before do
-      allow(Target).to receive(:all) { [target] }
-    end
-
-    it 'updates reachablity of each targets' do
-      expect(target).to receive(:update_reachability!)
-      Target.update_reachability
-    end
-  end
-
   describe '#update_reachability!' do
     it 'pings target address and update reachable status' do
       expect(subject).to receive(:ping?).and_return true

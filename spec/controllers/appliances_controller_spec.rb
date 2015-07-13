@@ -13,9 +13,8 @@ describe AppliancesController, :type => :controller do
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show', id: 1
+      get 'show', id: appliance.id
       expect(response).to be_success
     end
   end
-
 end

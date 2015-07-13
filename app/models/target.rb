@@ -15,10 +15,6 @@ class Target < ActiveRecord::Base
     { total_targets: count, reachable_targets: reachables.count }
   end
 
-  def self.update_reachability
-    all.each(&:update_reachability!)
-  end
-
   def update_reachability!
     self.reachable = ping?
     self.save
@@ -34,6 +30,10 @@ class Target < ActiveRecord::Base
     ping_log = `ping -c1 #{address}`
     ping_logger.info(ping_log)
     ping_log
+  end
+
+  def reachable_in_word
+    reachable ? 'reachable' : 'unreachable'
   end
 
 
