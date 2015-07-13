@@ -14,6 +14,7 @@ gem 'slim-rails'
 gem 'secure_headers'
 gem 'ffaker'
 gem 'timecop'
+gem 'chartkick'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
@@ -28,4 +29,5 @@ end
 
 group :development do
   gem 'spring'
+  gem 'pry-rails'
 end

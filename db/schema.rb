@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529201158) do
+ActiveRecord::Schema.define(version: 20150712143513) do
 
   create_table "appliances", force: true do |t|
     t.string   "name"
@@ -22,15 +22,7 @@ ActiveRecord::Schema.define(version: 20140529201158) do
 
   add_index "appliances", ["name"], name: "index_appliances_on_name", unique: true
 
-  create_table "targets", force: true do |t|
-    t.integer  "appliance_id"
-    t.string   "hostname"
-    t.string   "address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "targets", ["appliance_id"], name: "index_targets_on_appliance_id"
-  add_index "targets", ["hostname"], name: "index_targets_on_hostname", unique: true
+# Could not dump table "targets" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end

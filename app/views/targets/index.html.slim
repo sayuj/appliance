@@ -1,0 +1,12 @@
+h1 Targets
+
+= pie_chart targets_status_path
+
+table#items
+  tr
+    th hostname
+    th address
+  - for target in @targets
+    tr
+      td.hostname = target.hostname
+      td.address = target.address
