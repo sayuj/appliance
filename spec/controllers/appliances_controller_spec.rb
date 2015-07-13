@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe AppliancesController, :type => :controller do
 
+  let(:appliance) { create(:appliance) }
+
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'
@@ -11,7 +13,7 @@ describe AppliancesController, :type => :controller do
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      get 'show', id: 1
       expect(response).to be_success
     end
   end
