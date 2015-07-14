@@ -22,3 +22,13 @@ $ cd /tmp && tar czvf $(whoami)-submission.tgz $(whoami)-submission
 
 Send the resulting archive to us by email.
 
+## Update reachable status of targets
+
+Run the following:
+
+```
+$ rake targets:update_reachability
+```
+
+Set cronjob for periodic update.
+
