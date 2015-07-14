@@ -2,8 +2,8 @@ h1 Appliances
 
 table#appliances
   tr
-    th hostname
-    th address
+    th Hostname
+    th Address
   - for appliance in @appliances
     tr
       td.name = link_to appliance.name, appliance_path(appliance)

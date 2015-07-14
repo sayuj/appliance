@@ -1,12 +1,16 @@
 h1 Targets
 
-= pie_chart targets_status_path
+= pie_chart @status
 
 table#items
   tr
-    th hostname
-    th address
+    th Hostname
+    th Address
+    th Status
+    th Appliance
   - for target in @targets
     tr
-      td.hostname = target.hostname
+      td.hostname = link_to target.hostname, appliance_target_path(target.appliance, target)
       td.address = target.address
+      td.status = target.reachable_in_word
+      td.appliance = link_to target.appliance.name, appliance_path(target.appliance)

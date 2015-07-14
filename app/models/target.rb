@@ -10,9 +10,10 @@ class Target < ActiveRecord::Base
                            format:     {with: Resolv::IPv4::Regex}
 
   scope :reachables, -> { where reachable: true }
+  scope :unreachables, -> { where reachable: false }
 
   def self.reachable_status
-    { total_targets: count, reachable_targets: reachables.count }
+    { reachable_targets: reachables.count, unreachable_targets: unreachables.count }
   end
 
   def update_reachability!

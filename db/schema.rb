@@ -22,7 +22,16 @@ ActiveRecord::Schema.define(version: 20150712143513) do
 
   add_index "appliances", ["name"], name: "index_appliances_on_name", unique: true
 
-# Could not dump table "targets" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "targets", force: true do |t|
+    t.integer  "appliance_id"
+    t.string   "hostname"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "reachable",    default: false
+  end
+
+  add_index "targets", ["appliance_id"], name: "index_targets_on_appliance_id"
+  add_index "targets", ["hostname"], name: "index_targets_on_hostname", unique: true
 
 end

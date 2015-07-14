@@ -10,3 +10,7 @@ p
 p
   b Status:
   | #{@target.reachable_in_word.capitalize}
+
+p
+  b Appliance:
+  | #{link_to @target.appliance.name, appliance_path(@target.appliance)}

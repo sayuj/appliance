@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :target do
-    hostname "target1"
-    address  "8.8.8.8"
-    appliance_id 1
+    sequence(:hostname) { |n| "target#{n}" }
+    sequence(:address) { |n| "127.0.0.#{n}" }
+    reachable true
+    appliance
   end
 end

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :appliance do
-    name "app1"
+    sequence(:name) { |n| "app#{n}" }
     customer  "cust1"
   end
 end
